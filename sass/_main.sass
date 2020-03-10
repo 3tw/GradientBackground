@@ -44,6 +44,7 @@ h2
 #section-c
 	height: min-content
 	margin: 0
+	padding: 0 1rem 0 1rem
 	text-align: justify
 	text-transform: full-width
 	transition: opacity 0.4s
@@ -52,15 +53,28 @@ h2
 	position: fixed
 	width: 100%
 	text-align: center
-	top: 20%
+	top: 10%
 	left: 0
 	
 // Colors
 .gradient
-	background: linear-gradient(#050005 0%, #130013 20%, #240024 30%, #9910b9 65%, #fff91f 100%)
+	background: linear-gradient(#050005 0%, #130013 20%, #240024 30%, #9910b9 65%, #fff81fe8 100%)
 .yellow-clr
 	color: #e2db15
 .visible
 	opacity: 0.9
 .hidden
 	opacity: 0
+
+// Media queries
+@media screen and ( min-width: 720px  )
+	#main-content
+		display: grid
+		grid-template-columns: 0.3fr 1fr 0.3fr
+		
+	.empty-section,
+	#section-a,
+	#section-b,
+	#section-c
+		grid-column: 2/3
+	

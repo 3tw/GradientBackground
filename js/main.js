@@ -17,7 +17,7 @@ $(document).ready(function () {
 			"\n sectionBotom: " + sectionBottom +
 			"\n titleBottom: " + titleBottom 	
 		) */
-		return (sectionTop + 100) < screenBottom && sectionTop > (titleBottom + 60);
+		return (sectionTop + 100) < screenBottom && sectionTop > (titleBottom + 40);
 	}
 	// Animate section
 	function showSection(section) {
