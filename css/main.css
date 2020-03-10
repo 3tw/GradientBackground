@@ -5,7 +5,6 @@
 }
 
 html {
-  height: 100%;
   font-size: 16px;
 }
 
@@ -39,12 +38,12 @@ h2 {
 }
 
 #main-content {
-  height: 800vh;
+  height: 100%;
   padding: 1rem;
 }
 
 .empty-section {
-  height: 120vh;
+  height: 320px;
 }
 
 #section-a,
@@ -82,6 +81,41 @@ h2 {
   opacity: 0;
 }
 
+@media screen and (min-height: 400px) {
+  .empty-section {
+    height: 500px;
+  }
+}
+@media screen and (min-height: 500px) {
+  .empty-section {
+    height: 600px;
+  }
+}
+@media screen and (min-height: 600px) {
+  .empty-section {
+    height: 700px;
+  }
+}
+@media screen and (min-height: 700px) {
+  .empty-section {
+    height: 800px;
+  }
+}
+@media screen and (min-height: 800px) {
+  .empty-section {
+    height: 900px;
+  }
+}
+@media screen and (min-height: 900px) {
+  .empty-section {
+    height: 1000px;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .empty-section {
+    height: 120vh;
+  }
+}
 @media screen and (min-width: 720px) {
   #main-content {
     display: grid;
@@ -93,6 +127,14 @@ h2 {
 #section-b,
 #section-c {
     grid-column: 2/3;
+  }
+
+  #main-content {
+    height: 800vh;
+  }
+
+  .empty-section {
+    height: 100vh;
   }
 }
 
