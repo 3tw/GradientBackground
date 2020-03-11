@@ -20,7 +20,7 @@ $(document).ready(function () {
 		if ((sectionTop + 160) < screenBottom && sectionTop > (titleBottom + 100)) {
 			return 2 
 		}
-		else if ((sectionTop + 100) < screenBottom && sectionTop > (titleBottom + 40)) {
+		else if ((sectionTop + 50) < screenBottom && sectionTop > (titleBottom + 40)) {
 			return 1
 		} else {
 			return false
