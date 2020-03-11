@@ -17,15 +17,27 @@ $(document).ready(function () {
 			"\n sectionBotom: " + sectionBottom +
 			"\n titleBottom: " + titleBottom 	
 		) */
-		return (sectionTop + 100) < screenBottom && sectionTop > (titleBottom + 40);
+		if ((sectionTop + 160) < screenBottom && sectionTop > (titleBottom + 100)) {
+			return 2 
+		}
+		else if ((sectionTop + 100) < screenBottom && sectionTop > (titleBottom + 40)) {
+			return 1
+		} else {
+			return false
+		}
 	}
 	// Animate section
 	function showSection(section) {
-		if (isVisible(section)) {
+		if (isVisible(section) == 1) {
+			section.addClass("half-visible")
 			section.removeClass("hidden")
-			section.addClass("visible")
-		} else {
 			section.removeClass("visible")
+		} 
+		else if (isVisible(section) == 2){
+			section.addClass("visible")
+			section.removeClass("half-visible")
+		} else {
+			section.removeClass("half-visible")
 			section.addClass("hidden")
 		}
 	}
