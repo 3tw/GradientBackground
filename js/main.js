@@ -27,11 +27,11 @@ $(document).ready(function () {
 			return 2
 		}
 		// Entry top
-		else if (sectionTop > (titleBottom + 15) && sectionTop < (titleBottom + 60)) {
+		else if (sectionTop > (titleBottom + 30) && sectionTop < (titleBottom + 60)) {
 			return 4
 		}
 		//Off on top
-		else if (sectionTop <= (titleBottom + 15)) {
+		else if (sectionTop <= (titleBottom + 30)) {
 			return 5
 		}
 		// Off on bottom
