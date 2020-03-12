@@ -17,29 +17,64 @@ $(document).ready(function () {
 			"\n sectionBotom: " + sectionBottom +
 			"\n titleBottom: " + titleBottom 	
 		) */
-		if ((sectionTop + 160) < screenBottom && sectionTop > (titleBottom + 100)) {
-			return 2 
+		
+		// Main section
+		if ((sectionTop + 150) <= screenBottom && sectionTop >= (titleBottom + 60)) {
+			return 3
 		}
-		else if ((sectionTop + 50) < screenBottom && sectionTop > (titleBottom + 40)) {
+		// Entry bottom
+		else if ((sectionTop + 80) < screenBottom && (sectionTop + 100) > screenBottom) {
+			return 2
+		}
+		// Entry top
+		else if (sectionTop > (titleBottom + 15) && sectionTop < (titleBottom + 60)) {
+			return 4
+		}
+		//Off on top
+		else if (sectionTop <= (titleBottom + 15)) {
+			return 5
+		}
+		// Off on bottom
+		else if ((sectionTop + 80) >= screenBottom) {
 			return 1
-		} else {
-			return false
 		}
 	}
 	// Animate section
 	function showSection(section) {
+		// Off on bottom
 		if (isVisible(section) == 1) {
-			section.addClass("half-visible")
-			section.removeClass("hidden")
-			section.removeClass("visible")
-		} 
-		else if (isVisible(section) == 2){
-			section.addClass("visible")
-			section.removeClass("half-visible")
-		} else {
-			section.removeClass("half-visible")
-			section.addClass("hidden")
+			section.removeClass("half-visible");
+			section.removeClass("scale")
+			section.addClass("hidden");
+			section.addClass("initial-scale");
 		}
+		// Entry bottom
+		else if (isVisible(section) == 2) {
+			section.addClass("half-visible");
+			section.addClass("initial-scale");
+			section.removeClass("scale");
+			section.removeClass("hidden");
+			section.removeClass("visible");
+		} 
+		// Main section
+		else if (isVisible(section) == 3){
+			section.addClass("visible");
+			section.addClass("scale");
+			section.removeClass("initial-scale")
+			section.removeClass("half-visible");
+		} 
+		// Entry top
+		if (isVisible(section) == 4) {
+			section.addClass("half-visible");
+			section.removeClass("hidden");
+			section.removeClass("visible");
+		} 
+		// Off on top
+		else if (isVisible(section) == 5) {
+			section.removeClass("half-visible");
+			section.addClass("scale");
+			section.addClass("hidden");
+		} 
 	}
 	// Event listeners
 	$(window).scroll(function() {

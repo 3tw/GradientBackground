@@ -12,32 +12,36 @@ body
 	padding: 0
 	margin: 0
 	font-family: "Arial", sans-serif
-	line-height: 1.3rem
-	font-size: 1.2rem
+	line-height: 2rem
+	font-size: 1.4rem
+	font-weight: bold
 	color: #444444
-	
+
 h1
+	display: inline-block
 	font-family: "Arial", sans-serif
 	color: #fff91f
 	font-size: 4rem
 	line-height: 3.8rem
 	letter-spacing: 10px
+	text-transform: lowercase
 	margin: 0
-	
-h2 
+
+h2
+	display: inline-block
 	font-family: "Arial", sans-serif
 	color: #fff91f
-	font-size: 2rem
-	line-height: 2.1rem
-	text-transform: uppercase
-	letter-spacing: 3px
+	font-size: 3rem
+	line-height: 3rem
+	letter-spacing: 2px
+	text-transform: lowercase
 	margin: 0
-	
+
 #main-content
 	padding: 1rem
 	overflow-y: scroll
 	scroll-behavior: smooth
-	
+
 .empty-section
 	height: 320px
 #section-a,
@@ -46,9 +50,9 @@ h2
 	height: min-content
 	margin: 0
 	padding: 0 1rem 0 1rem
-	text-align: justify
 	text-transform: full-width
-	transition: opacity 0.5s
+	text-align: center
+	transition: all 0.7s ease
 	
 .title
 	position: fixed
@@ -56,18 +60,26 @@ h2
 	text-align: center
 	padding-top: 5rem
 	left: 0
-	
+
 // Colors
 .gradient
-	background: linear-gradient(#050005 0%, #130013 20%, #240024 30%, #9910b9 65%, #ebe42be8 100%)
+	background: linear-gradient(#050005 0%, #130013 20%, #240024 30%, #9910b9 50%, #e27c1de8 70%, #e0c52ce8 100%)
 .yellow-clr
 	color: #e2db15
+
+// Transitions
 .visible
 	opacity: 1
 .half-visible
 	opacity: 0.5
 .hidden
 	opacity: 0
+.scale
+	-webkit-transform: scale3d(1, 1, 1)
+	-moz-transform: scale3d(1, 1, 1)
+	transform: scale3d(1, 1, 1)
+.initial-scale
+	transform: scale3d(0.9, 0.9, 0.9)
 
 // Media queries
 @media screen and ( min-height: 400px )
@@ -91,20 +103,20 @@ h2
 @media screen and ( min-height: 1000px )
 	.empty-section
 		height: 120vh
-	
+
 @media screen and ( min-width: 720px )
 	#main-content
 		display: grid
 		grid-template-columns: 0.3fr 1fr 0.3fr
-		
+		grid-auto-rows: min-content
+
 	.empty-section,
 	#section-a,
 	#section-b,
 	#section-c
 		grid-column: 2/3
-		
+
 	#main-content
 		height: 800vh
 	.empty-section
 		height: 100vh
-	
